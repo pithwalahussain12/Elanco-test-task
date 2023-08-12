@@ -21,3 +21,38 @@ ul.user-list-app li {
     color: #0891b2;
     font-weight: 600;
 }
+
+
+span.arrow-icon {
+    width: 44px;
+    height: 44px;
+    background: #0891b2;
+    display: block;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    display: block;
+}
+
+span.arrow-icon svg {
+    height: 20px;
+    position: relative;
+    top: 12px;
+    left: 11px;
+}
+
+.sweet-loading {
+    margin: 5% auto;
+    text-align: center;
+}
+
+.MuiDataGrid-columnHeaders {
+    background: #0891b2;
+    color: #fff;
+}
+
+.css-5wly58-MuiDataGrid-root .MuiDataGrid-sortIcon,
+.css-5wly58-MuiDataGrid-root .MuiDataGrid-filterIcon {
+    color: #fff;
+}

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { DataGrid, GridColDef, GridToolbar } from '@mui/x-data-grid';
 
 
 // colums
@@ -85,10 +85,12 @@ export default function DataTable({ data }: any): any {
         rows[i].Tags = ((Object.values(rows[i].Tags)))
     }
 
-    console.log("Checkpoint:- ", data.length > 200 ? 25 : 10)
+    // search
+
 
     return (
         <div style={{ height: 600, width: '100%' }}>
+
             <DataGrid
                 rows={rows}
                 columns={columns}
@@ -96,9 +98,14 @@ export default function DataTable({ data }: any): any {
                     pagination: {
                         paginationModel: { page: 0, pageSize: data.length > 200 ? 25 : 10 },
                     },
-
                 }}
-
+                slots={{ toolbar: GridToolbar }}
+                slotProps={{
+                    toolbar: {
+                        showQuickFilter: true,
+                        quickFilterProps: { debounceMs: 300 },
+                    },
+                }}
                 pageSizeOptions={[25, 10, 5]}
             />
         </div>
